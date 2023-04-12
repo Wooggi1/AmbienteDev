@@ -1,8 +1,7 @@
 from django.contrib import admin
 from django.urls import path, include
-from Login.views import Erro
-from Login.views import Logado, PaginaLogin
-from Register.views import Register, ForgotPassword
+from Login.views import Erro, Register, ForgotPassword, Logado, PaginaLogin
+
 
 urlpatterns = [
     path('logado/', Logado, name='logado'),

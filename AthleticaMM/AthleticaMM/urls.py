@@ -16,9 +16,6 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from Login.views import Erro
-from Login.views import Logado, PaginaLogin
-from Register.views import Register, ForgotPassword
 
 urlpatterns = [
     path('admin/', admin.site.urls),
