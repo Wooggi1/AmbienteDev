@@ -6,16 +6,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirmação de cadastro</title>
-    <link rel="stylesheet" href="/AthleticaMM/static/css/style.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="https://kit.fontawesome.com/a81368914c.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="icon" href="LogoOG.png">
+    <link rel="icon" href="{% static 'LogoOG.png' %}">
 </head>
 
 <body>
     <div class="container">
         <div class="img">
-            <img src="img/Phishing account-amico.svg">
+            <img src="{% static 'img/Phishing account-amico.svg' %}">
         </div>
         <div class="confirm-container">
             <div class="content">

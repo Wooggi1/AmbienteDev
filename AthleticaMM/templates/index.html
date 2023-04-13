@@ -6,16 +6,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Entrar</title>
-    <link rel="stylesheet" href="/AthleticaMM/static/css/style.css">
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <script src="https://kit.fontawesome.com/a81368914c.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-    <link rel="icon" href="/AthleticaMM/static/img/LogoOG.png">
+    <link rel="icon" href="{% static 'img/LogoOG.png' %}">
 </head>
 
 <body>
     <div class="container">
         <div class="img">
-            <img src="/AthleticaMM/static/img/Gaming-rafiki.svg">
+            <img src="{% static 'img/Gaming-rafiki.svg' %}">
         </div>
         <div class="login-container">
             <form action="login.html">
@@ -40,7 +41,7 @@
                     </div>
                 </div>
                 <input type="submit" class="btn" value="Entrar">
-                <a class="forgot" href="forgotPassword.html">Esqueceu sua senha ?</a>
+                <a class="forgot" href="{% url 'esqueci a senha' %}">Esqueceu sua senha ?</a>
                 <div class="others">
                     <hr>
                     <p>OU</p>
@@ -48,21 +49,21 @@
                 </div>
                 <div class="social">
                     <div class="social-icons facebook">
-                        <a href="#"><img src="/AthleticaMM/static/img/facebook.png">Entrar com o Facebook</a>
-                    </div>
+                        <a href="#"><img src="{% static 'img/facebook.png' %}">Entrar com o Facebook</a>
+                    </div>'
                     <div class="social-icons google">
-                        <a href="#"><img src="/AthleticaMM/static/img/google.png">Entrar com Google</a>
+                        <a href="#"><img src="{% static 'img/google.png' %}">Entrar com Google</a>
                     </div>
                 </div>
                 <div class="account">
                     <p>Player você ainda não possui conta ?</p>
-                    <a href="register.html">Cadastre-se</a>
+                    <a href="{% url 'pagina de cadastro' %}">Cadastre-se</a>
                 </div>
             </form>
         </div>
     </div>
 
-    <script type="text/javascript" src="/AthleticaMM/static/js/main.js"></script>
+    <script type="text/javascript" src="{% static 'main.js' %}"></script>
 </body>
 
 </html>
