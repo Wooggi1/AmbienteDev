@@ -10,6 +10,8 @@ class Profile(models.Model):
     location =  models.CharField(max_length=100, blank=True)
     age = models.IntegerField()
     bio = models.TextField(blank=True)
+    role = models.CharField(max_length=100, blank=False)
 
+    
     def __str__(self):
         return self.user.username

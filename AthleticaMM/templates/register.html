@@ -20,7 +20,7 @@
             <img src="{% static 'img/gaming-animate.svg' %}">
         </div>
         <div class="login-container">
-            <form action="index.html">
+            <form action="{% url 'logado' %}">
                 <h2>Cadastre-se</h2>
                 <p>Entrar com:</p>
                 <div class="social">
@@ -35,9 +35,11 @@
                     <div class="i">
                         <i class="fas fa-user"></i>
                     </div>
+                <form method="post">
+                    {% csrf_token %}    
                     <div>
-                        <h5>Usuário</h5>
-                        <input class="input" type="text">
+                        <h5 for="username">Usuário</h5>
+                        <input class="input" type="text" id="username" name="username" required>
                     </div>
                 </div>
                 <div class="input-div two">
@@ -45,8 +47,8 @@
                         <i class="fas fa-envelope"></i>
                     </div>
                     <div>
-                        <h5>E-mail</h5>
-                        <input class="input" type="email">
+                        <h5 for="email">E-mail</h5>
+                        <input class="input" type="email" id="email" name="email" required>
                     </div>
                 </div>
                 <div class="input-div one">
@@ -54,8 +56,8 @@
                         <i class="fas fa-key"></i>
                     </div>
                     <div>
-                        <h5>Senha</h5>
-                        <input class="input" type="password">
+                        <h5 for="password">Senha</h5>
+                        <input class="input" type="password" id="password" name="password" required>
                     </div>
                 </div>
                 <div class="input-div two">
@@ -72,8 +74,10 @@
                     <label>Li e concordo com os </label><a id="action-modal">termos de uso.</a>
                 </div>
                 <div class="btn-container">
-                    <a href="{% url 'logado' %}" class="btn-action">Cadastrar</a>
+                    <button type="submit" class="btn-action">Cadastrar</button>
+                    <!--<a href="{% url 'logado' %}" class="btn-action">Cadastrar</a>-->
                 </div>
+                </form>
                 <div class="account">
                     <p>Já possui conta ?</p>
                     <a href="{% url 'pagina de login' %}">Entrar</a>
