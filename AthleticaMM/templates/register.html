@@ -20,7 +20,7 @@
             <img src="{% static 'img/gaming-animate.svg' %}">
         </div>
         <div class="login-container">
-            <form action="{% url 'logado' %}">
+            <form action="">
                 <h2>Cadastre-se</h2>
                 <p>Entrar com:</p>
                 <div class="social">
@@ -35,11 +35,12 @@
                     <div class="i">
                         <i class="fas fa-user"></i>
                     </div>
-                <form method="post">
+                <form action="" method="POST">
+
                     {% csrf_token %}    
                     <div>
                         <h5 for="username">Usuário</h5>
-                        <input class="input" type="text" id="username" name="username" required>
+                        <input class="input" type="text" name="username" required>
                     </div>
                 </div>
                 <div class="input-div two">
@@ -66,7 +67,7 @@
                     </div>
                     <div>
                         <h5>Confirmar Senha</h5>
-                        <input class="input" type="password">
+                        <input class="input" name="password2" type="password">
                     </div>
                 </div>
                 <div class="terms">
@@ -76,6 +77,11 @@
                 <div class="btn-container">
                     <button type="submit" class="btn-action">Cadastrar</button>
                     <!--<a href="{% url 'logado' %}" class="btn-action">Cadastrar</a>-->
+                </div>
+                <div>
+                    {% for message in messages%}
+                    <h5>{{message}}</h5>
+                    {% endfor %}
                 </div>
                 </form>
                 <div class="account">

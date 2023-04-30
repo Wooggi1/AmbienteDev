@@ -11,6 +11,7 @@ class Profile(models.Model):
     age = models.IntegerField()
     bio = models.TextField(blank=True)
     role = models.CharField(max_length=100, blank=False)
+    email = models.TextField()
 
     
     def __str__(self):
