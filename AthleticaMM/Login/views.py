@@ -31,10 +31,10 @@ def Register(request):
         if password == password2:
             if User.objects.filter(email=email).exists():
                 messages.info(request, 'Email already in use')
-                return redirect('register.html')
+                return redirect('pagina de cadastro')
             elif User.objects.filter(username=username).exists():
                 messages.info(request, 'Username already exists')
-                return redirect('register.html')
+                return redirect('pagina de cadastro')
             else:
                 user = User.objects.create_user(username=username, email=email, password=password)
                 user.save()
@@ -42,10 +42,10 @@ def Register(request):
                 user_model = User.objects.get(username=username)
                 new_profile = Profile.objects.create(user=user_model, id_user=user_model.id)
                 new_profile.save()
-                return redirect('index.html')
+                return redirect('pagina de login')
         else:
             messages.info(request, 'passwords do not match')
-            return redirect('register.html')
+            return redirect('pagina de cadastro')
     else:
         return render(request, 'register.html')
 
